@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>استبيان بيانات طفل</title>
+
+<style>
+body {
+    font-family: "Cairo", Arial;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #4a6fa5;
+}
+
+.section-title {
+    margin-top: 30px;
+    color: #2c3e50;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3a5c88;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>استبيان بيانات الطفل</h2>
+
+<form action="https://formspree.io/f/mzdkwdaj" method="POST">
+
+<!-- البيانات الأساسية -->
+<div class="section-title">البيانات الأساسية</div>
+
+<label>اسم الطفل</label>
+<input type="text" name="child_name" required>
+
+<label>تاريخ الميلاد</label>
+<input type="date" name="birth_date" required>
+
+<label>العمر</label>
+<input type="number" name="age" min="0" required>
+
+<label>النوع</label>
+<select name="gender" required>
+<option value="">اختر</option>
+<option>ذكر</option>
+<option>أنثى</option>
+</select>
+
+<label>هل التحق بحضانة / مدرسة</label>
+<select name="enrolled" required>
+<option value="">اختر</option>
+<option>نعم</option>
+<option>لا</option>
+</select>
+
+<label>اسم ولي الأمر</label>
+<input type="text" name="parent_name" required>
+
+<label>مهنة ولي الأمر</label>
+<input type="text" name="parent_job">
+
+<label>صلة القرابة</label>
+<input type="text" name="relation">
+
+<label>رقم الهاتف</label>
+<input type="tel" name="phone" pattern="[0-9]{11}" placeholder="مثال: 01XXXXXXXXX" required>
+
+<label>العنوان</label>
+<textarea rows="2" name="address"></textarea>
+
+<label>الخدمة المطلوبة</label>
+<select name="service" required>
+<option value="">اختر</option>
+<option>تخاطب</option>
+<option>مهارات</option>
+<option>تعديل سلوك</option>
+<option>إرشاد نفسي وأسري (أطفال)</option>
+<option>إرشاد نفسي وأسري (مراهقين)</option>
+<option>إرشاد نفسي</option>
+</select>
+
+<!-- التاريخ الطبي -->
+<div class="section-title">التاريخ الطبي</div>
+
+<label>هل هناك حمل طبيعي؟</label>
+<select name="pregnancy_normal">
+<option value="">اختر</option>
+<option>نعم</option>
+<option>لا</option>
+</select>
+
+<label>هل تعرضت الأم لمشاكل أثناء الحمل؟</label>
+<select name="pregnancy_issue">
+<option value="">اختر</option>
+<option>الضغط</option>
+<option>السكر</option>
+<option>توتر شديد</option>
+</select>
+
+<label>نوع الولادة</label>
+<select name="birth_type">
+<option value="">اختر</option>
+<option>طبيعي</option>
+<option>قيصري</option>
+</select>
+
+<label>هل حدث نقص أكسجين؟</label>
+<select name="oxygen_deficiency">
+<option value="">اختر</option>
+<option>نعم</option>
+<option>لا</option>
+</select>
+
+<label>الحضانة</label>
+<select name="incubator">
+<option value="">اختر</option>
+<option>نعم</option>
+<option>لا</option>
+</select>
+
+<label>هل يعاني الطفل من؟</label>
+<select name="child_issues">
+<option value="">اختر</option>
+<option>مشاكل سمع</option>
+<option>مشاكل نظر</option>
+<option>ضعف سمع</option>
+</select>
+
+<button type="submit">إرسال</button>
+
+</form>
+</div>
+
+</body>
+</html>
